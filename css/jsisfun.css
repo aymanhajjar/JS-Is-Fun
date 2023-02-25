@@ -99,6 +99,12 @@ header h2 {
     max-width: 25%;
     max-height: 80%;
     transform: rotate(10deg);
+    transition: all 0.3s;
+}
+
+.introImage:hover {
+    transform: rotate(0deg);
+    transition: all 0.3s;
 }
 
 .text h1 {
@@ -147,6 +153,7 @@ header h2 {
     border-radius: 1rem;
     transform: translate(-50%, -50%) scale(1.5);
     opacity: 0;
+    visibility: hidden;
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -161,8 +168,13 @@ header h2 {
 .openForm {
     top: 50%;
     opacity: 1;
+    visibility: visible;
     transform: translate(-50%, -50%) scale(1);
     transition: all 0.3s ease-in-out;
+}
+
+.errormessage {
+    color: rgb(255, 83, 83);
 }
 
 .registerForm h2 {
@@ -188,6 +200,11 @@ header h2 {
     transition: all 0.2s;
 }
 
+
+.errorField {
+    outline: 0.2rem rgb(255, 83, 83) solid;
+}
+
 .registerForm button {
     border: none;
     background-color: rgb(238, 193, 56);
@@ -201,6 +218,45 @@ header h2 {
 .registerForm button:hover {
     cursor: pointer;
     background-color: rgb(254, 216, 99);
+    transition: all 0.3s;
+}
+
+.validation {
+    max-height: 0px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.validationOpened {
+    max-height: 10rem;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.correct {
+    color: green;
+    padding-left: 1rem;
+    transition: all 0.3s;
+  }
+  
+.correct:before {
+    position: relative;
+    left: -1rem;
+    content: "✔";
+    transition: all 0.3s;
+}
+
+.error {
+    color: red;
+    padding-left: 2rem;
+    transition: all 0.3s;
+}
+  
+.error:before {
+    position: relative;
+    left: -2rem;
+    content: "✖";
     transition: all 0.3s;
 }
 

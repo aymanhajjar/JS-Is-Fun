@@ -22,8 +22,8 @@
             <div class="containerMain">
                 <div class="text">
                     <h1>JS IS FUN!</h1>
-                    <h3>You must register first</h3>
-                    <button class="regsiter" onclick="openForm()">Register</button>
+                    <h3 id="status">You must register first</h3>
+                    <button id="regButton" class="regsiter" onclick="openForm()">Register</button>
                 </div>
                 <img class="introImage" src="images/havefun.png">
             </div>
@@ -46,23 +46,33 @@
             <div class="age">
                 <h2>Prime Numbers</h2>
                 <p>A prime number is a whole number greater than 1 whose only factors are 1 and itself. A factor is a whole number that can be divided evenly into another number. The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29. Numbers that have more than two factors are called composite numbers.</p>
-                <button class="tryit" onclick="checkPrime()">Try it!</button>
+                <button class="tryit" onclick="prime()">Try it!</button>
                 <div class="primeResult" id="primeResult"></div>
             </div>
         </div>
     </div>
 
-    <div class="registerForm" id="registerForm">
+    <form id="registerForm" onsubmit="return false">
+    <div class="registerForm" id="registerPopup">
         <h2>Register</h2>
         <div class="name">
-            <input placeholder="First Name">
-            <input placeholder="Last Name">
+            <input id="firstname" placeholder="First Name" name="firstname">
+            <input id="lastname" placeholder="Last Name" name="lastname">
         </div>
-        <input placeholder="Email">
-        <input placeholder="Password">
-        <input placeholder="Confirm Password">
-        <button onclick="closeForm()">Submit</button>
+        <input id="email" placeholder="Email" name="email">
+        <input id="password" type="password" placeholder="Password" name="password">
+        <div class="validation" id="validation">
+            <p id="lowercase" class="error">A <b>lowercase</b> letter</p>
+            <p id="uppercase" class="error">An <b>uppercase</b> letter</p>
+            <p id="special" class="error">A <b>special character</b></p>
+            <p id="number" class="error">A <b>number</b></p>
+            <p id="length" class="error"><b>8 characters</b> minimum</p>
+        </div>
+        <input id="confirmPassword" type="password" placeholder="Confirm Password">
+        <div class="errormessage" id="errormessage"></div>
+        <button onclick="submitForm()">Submit</button>
     </div >
+</form>
 
     <script src="js/jsisfun.js"></script>
 </body>

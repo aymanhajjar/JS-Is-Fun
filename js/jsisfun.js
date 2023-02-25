@@ -36,3 +36,23 @@ function palindromeCheck(string) {
       }
     return false
 }
+
+function checkPrime () {
+    var result = document.getElementById('primeResult')
+    var number = prompt('Input your age')
+    var isPrime = primeCheck(number)
+    if(isPrime) {
+        result.innerHTML = `Yes, your age, <b>${number}</b>, is a prime number!`
+    } else {
+        result.innerHTML = `No, your age, <b>${number}</b>, is <i>not</i> a prime number!`
+    }
+}
+
+function primeCheck(number) {
+    if (number <= 1) return false;
+    if (number === 2) return true;
+    var sqrt = Math.sqrt(number);
+    for (var i = 2; i <= sqrt; i++) 
+        if (number % i === 0) return false;
+    return true;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Is Fun | Home</title>
+    <link rel="stylesheet" type="text/css" href="css/jsisfun.css">
+</head>
+<body>
+    <header>
+        <h2>Js Is Fun!</h2>
+        <nav class="navlinks">
+            <a>Home</a>
+            <a>Strings</a>
+            <a>IP</a>
+        </nav>
+    </header>
+
+    <div  class="container" id="container">
+        <div class="greeting" id="greeting">
+            <div class="containerMain">
+                <div class="text">
+                    <h1>JS IS FUN!</h1>
+                    <h3>You must register first</h3>
+                    <button class="regsiter" onclick="openForm()">Register</button>
+                </div>
+                <img class="introImage" src="images/havefun.png">
+            </div>
+        </div>
+
+        <div class="firstSection">
+            <div class="mergesort">
+                <h2>Merge Sort</h2>
+                <p>Merge sort is one of the most efficient sorting algorithms. It is based on the divide-and-conquer strategy. Merge sort continuously cuts down a list into multiple sublists until each has only one item, then merges those sublists into a sorted list.</p>
+                <button class="tryit" onclick="mergeSort()">Try it!</button>
+            </div>
+
+            <div class="palindrome">
+                <h2>Palindrome Strings</h2>
+                <p>A string is called a palindrome string if the reverse of that string is the same as the original string. For example, radar , level , etc. Similarly, a number that is equal to the reverse of that same number is called a palindrome number. For example, 3553, 12321, etc.</p>
+                <button class="tryit" onclick="palindrome()">Try it!</button>
+                <div class="palindromeResult" id="palindromeResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="registerForm" id="registerForm">
+        <h2>Register</h2>
+        <div class="name">
+            <input placeholder="First Name">
+            <input placeholder="Last Name">
+        </div>
+        <input placeholder="Email">
+        <input placeholder="Password">
+        <input placeholder="Confirm Password">
+        <button onclick="closeForm()">Submit</button>
+    </div >
+
+    <script src="js/jsisfun.js"></script>
+</body>
+</html>

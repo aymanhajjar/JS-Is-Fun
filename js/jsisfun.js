@@ -7,6 +7,13 @@ var password = document.getElementById('password')
 var full_name = ''
 var password_validated = false
 
+fetch('http://ip-api.com/json/?fields=61439')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('location').innerHTML += data.city + ', ' + data.regionName + ', ' + data.country
+    document.getElementById('ip').innerHTML += data.query
+})
+
 password.addEventListener('focus', () => {
     var validation = document.getElementById('validation')
     validation.classList.add('validationOpened')
@@ -55,6 +62,38 @@ function openForm() {
     }
 }
 
+function consonants() {
+    var text = document.getElementById('consonantResult')
+    var word = prompt('Input a word')
+    var word_holder = word
+    set_of_consonants = ''
+    var i = 0;
+    var vowels = ['e', 'i', 'a', 'u', 'o']
+
+    while(!vowels.includes(word[0]) && word.length > 0) {
+        set_of_consonants += word[0];
+        word = word.substring(1, word.length)
+    }
+    word += set_of_consonants + 'ay'
+    text.innerHTML = `<b>${word_holder}</b> becomes <b>${word}</b>`
+}
+
+function getIP() {
+    var result = document.getElementById('ipResult')
+    fetch('https://api.bigdatacloud.net/data/client-ip')
+      .then(response => response.json())
+      .then(data => {
+        var ipaddress = data.ipString
+        var sum = 0
+        for (var i = 0; i < ipaddress.length; i++) {
+            if(parseInt(ipaddress[i]) % 2 == 0) {
+                sum += parseInt(ipaddress[i])
+            };
+          }
+        result.innerHTML = `Your IP address is <b>${data.ipString}</b> and the sum of its even numbers is <b>${sum}</b>`
+      });
+}
+
 function submitForm() {
     if(validateForm()) {
         var json_object = {
@@ -69,6 +108,12 @@ function submitForm() {
         login_status.innerText = `Welcome, ${full_name}!`
         closeForm()
     }
+}
+
+function reverse() {
+    var string = prompt('Input a string')
+    var reversed = string.split("").reverse().join("")
+    document.getElementById('reverseResult').innerHTML = `<b>${string}</b> reversed is <b>${reversed}</b>`
 }
 
 function validateForm() {

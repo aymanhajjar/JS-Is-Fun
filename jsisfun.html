@@ -19,6 +19,10 @@
 
     <div  class="container" id="container">
         <div class="greeting" id="greeting">
+            <div class="location">
+                <div id="location"><img src='images/locationpin.png' width="40px"></div>
+                <div id="ip"></div>
+            </div>
             <div class="containerMain">
                 <div class="text">
                     <h1>JS IS FUN!</h1>
@@ -48,6 +52,24 @@
                 <p>A prime number is a whole number greater than 1 whose only factors are 1 and itself. A factor is a whole number that can be divided evenly into another number. The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29. Numbers that have more than two factors are called composite numbers.</p>
                 <button class="tryit" onclick="prime()">Try it!</button>
                 <div class="primeResult" id="primeResult"></div>
+            </div>
+            <div class="addletters">
+                <h2>Consonants and Vowels</h2>
+                <p>Using JS you can come up with a fun trick that allows you to take the first consonant or set of consonants, and put them at the end of the word, then add "ay" at the end.</p>
+                <button class="tryit" onclick="consonants()">Try it!</button>
+                <div class="consonantResult" id="consonantResult"></div>
+            </div>
+            <div class="ipaddress">
+                <h2>Get Your IP Address</h2>
+                <p> An Internet Protocol (IP) address is the unique number that gets assigned to your connected device. Every mobile phone, laptop, cable box, tablet, server along with thousands of other types of devices (IoT) that are connected to a computer network has one.</p>
+                <button class="tryit" onclick="getIP()">Try it!</button>
+                <div class="ipResult" id="ipResult"></div>
+            </div>
+            <div class="reverse">
+                <h2>String Reverse</h2>
+                <p>JS can come in handy when you want to reverse a string. Give it a try!</p>
+                <button class="tryit" onclick="reverse()">Try it!</button>
+                <div class="reverseResult" id="reverseResult"></div>
             </div>
         </div>
     </div>

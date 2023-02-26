@@ -59,7 +59,6 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 133, 39, 0.6);
     padding: 2rem;
     box-sizing: border-box;
     display: flex;
@@ -69,13 +68,18 @@ header {
 header nav {
     width: 30%;
     display: flex;
+    font-size: 1.5rem;
     justify-content: space-around;
     align-items: center;
 }
 
+header nav a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 header h2 {
     font-size: 2rem;
-
 }
 
 .greeting {
@@ -92,6 +96,7 @@ header h2 {
     display: flex;
     width: 100%;
     height: 70%;
+    align-items: center;
     justify-content: space-around;
 }
 
@@ -102,13 +107,38 @@ header h2 {
     transition: all 0.3s;
 }
 
+.location {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+#location {
+    display: flex;
+    background-color: rgb(79, 79, 79);
+    color: rgb(228, 228, 228);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#ip {
+    text-align: right;
+    background-color: rgb(119, 119, 119);
+    color: rgb(228, 228, 228);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
 .introImage:hover {
     transform: rotate(0deg);
     transition: all 0.3s;
 }
 
 .text h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     color: aliceblue;
     text-shadow: 5px 5px 10px black;
 }
@@ -288,9 +318,10 @@ header h2 {
 
 .tryit {
     border: none;
-    background-color: rgb(238, 193, 56);
+    background-color: #eec138;
     margin: 0.5rem 0rem;
     padding: 1rem 2rem;
+    font-size: 1rem;
     border-radius: 0.5rem;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     transition: all 0.2s;

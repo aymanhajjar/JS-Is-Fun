@@ -12,15 +12,15 @@
         <h2>Js Is Fun!</h2>
         <nav class="navlinks">
             <a>Home</a>
-            <a>Strings</a>
-            <a>IP</a>
+            <a onclick="goTo('firstSection')">Numbers</a>
+            <a onclick="goTo('secondSection')">Strings</a>
         </nav>
     </header>
 
-    <div  class="container" id="container">
+    <div class="container" id="container">
         <div class="greeting" id="greeting">
             <div class="location">
-                <div id="location"><img src='images/locationpin.png' width="40px"></div>
+                <h3 id="location"><img src='images/locationpin.png' width="40px"></h3>
                 <div id="ip"></div>
             </div>
             <div class="containerMain">
@@ -33,18 +33,15 @@
             </div>
         </div>
 
-        <div class="firstSection">
+        <div class="firstSection" id="firstSection">
             <div class="mergesort">
                 <h2>Merge Sort</h2>
                 <p>Merge sort is one of the most efficient sorting algorithms. It is based on the divide-and-conquer strategy. Merge sort continuously cuts down a list into multiple sublists until each has only one item, then merges those sublists into a sorted list.</p>
-                <button class="tryit" onclick="mergeSort()">Try it!</button>
-            </div>
-
-            <div class="palindrome">
-                <h2>Palindrome Strings</h2>
-                <p>A string is called a palindrome string if the reverse of that string is the same as the original string. For example, radar , level , etc. Similarly, a number that is equal to the reverse of that same number is called a palindrome number. For example, 3553, 12321, etc.</p>
-                <button class="tryit" onclick="palindrome()">Try it!</button>
-                <div class="palindromeResult" id="palindromeResult"></div>
+                <button class="tryit" onclick="mergeStart()">Try it!</button>
+                <div class="mergeResult" id="mergeResult">
+                    <div class="unsortedArray" id="unsortedArray"></div>
+                    <div class="sortedArray" id="sortedArray"></div>
+                </div>
             </div>
 
             <div class="age">
@@ -53,29 +50,52 @@
                 <button class="tryit" onclick="prime()">Try it!</button>
                 <div class="primeResult" id="primeResult"></div>
             </div>
-            <div class="addletters">
-                <h2>Consonants and Vowels</h2>
-                <p>Using JS you can come up with a fun trick that allows you to take the first consonant or set of consonants, and put them at the end of the word, then add "ay" at the end.</p>
-                <button class="tryit" onclick="consonants()">Try it!</button>
-                <div class="consonantResult" id="consonantResult"></div>
-            </div>
             <div class="ipaddress">
                 <h2>Get Your IP Address</h2>
                 <p> An Internet Protocol (IP) address is the unique number that gets assigned to your connected device. Every mobile phone, laptop, cable box, tablet, server along with thousands of other types of devices (IoT) that are connected to a computer network has one.</p>
                 <button class="tryit" onclick="getIP()">Try it!</button>
                 <div class="ipResult" id="ipResult"></div>
             </div>
+            <div class="courseForm" id="courseForm">
+                <h2>Tell us about your favorite course in university!</h2>
+                <div class="courseInputs">
+                    <input id="course" placeholder="Course Name" name="name">
+                    <input id="cdn" placeholder="Course CDN" name="cdn">
+                    <input id="credits" placeholder="# of credits" name="credits">
+                </div>
+                <button onclick="submitCourse()">Submit</button>
+                <div class="courseResult" id="courseResult"></div>
+            </div >
+        </div>
+
+        <div class="secondSection" id="secondSection">
+            <div id="membersContainer">
+                <span id="membersText">Members-only</span>
+              </div>              
             <div class="reverse">
                 <h2>String Reverse</h2>
-                <p>JS can come in handy when you want to reverse a string. Give it a try!</p>
+                <p>Using JS, you can reverse numbers in a given string. For example, Lem1on2 becomes Lem2on1. Give it a try!</p>
                 <button class="tryit" onclick="reverse()">Try it!</button>
                 <div class="reverseResult" id="reverseResult"></div>
+            </div>
+            <div class="addletters">
+                <h2>Consonants and Vowels</h2>
+                <p>Using JS you can come up with a fun trick that allows you to take the first consonant or set of consonants, and put them at the end of the word, then add "ay" at the end.</p>
+                <button class="tryit" onclick="consonants()">Try it!</button>
+                <div class="consonantResult" id="consonantResult"></div>
+            </div>
+            <div class="palindrome">
+                <h2>Palindrome Strings</h2>
+                <p>A string is called a palindrome string if the reverse of that string is the same as the original string. For example, radar , level , etc. Similarly, a number that is equal to the reverse of that same number is called a palindrome number. For example, 3553, 12321, etc.</p>
+                <button class="tryit" onclick="palindrome()">Try it!</button>
+                <div class="palindromeResult" id="palindromeResult"></div>
             </div>
         </div>
     </div>
 
     <form id="registerForm" onsubmit="return false">
     <div class="registerForm" id="registerPopup">
+        <img class="xclose" onclick="closeForm()" src="images/x-close.png">
         <h2>Register</h2>
         <div class="name">
             <input id="firstname" placeholder="First Name" name="firstname">
@@ -95,6 +115,9 @@
         <button onclick="submitForm()">Submit</button>
     </div >
 </form>
+
+
+    <button class="scrollUp" id="scrollUp" onclick="scrollUp()">^ TOP</button>
 
     <script src="js/jsisfun.js"></script>
 </body>

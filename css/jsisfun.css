@@ -54,6 +54,29 @@ i {
     font-style: italic;
 }
 
+.scrollUp {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem;
+    z-index: 5;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 59, 59);
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.3s;
+}
+
+.scrollUp:hover {
+    background-color: rgb(231, 42, 42);
+    transition: all 0.3s;
+}
+
 header {
     position: absolute;
     top: 0;
@@ -251,6 +274,14 @@ header h2 {
     transition: all 0.3s;
 }
 
+.xclose {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 5%;
+    cursor: pointer;
+}
+
 .validation {
     max-height: 0px;
     opacity: 0;
@@ -300,9 +331,23 @@ header h2 {
     width: 48%;
 }
 
+#membersContainer{
+    position: relative;
+}
+
+#membersText {
+    position: absolute;
+    left: 0;
+    color: rgb(255, 77, 77);
+    font-size: 1.5rem;
+}
+
 .firstSection {
     background-color: rgb(220, 220, 220);
     padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .firstSection h2 {
@@ -314,6 +359,123 @@ header h2 {
 .firstSection p {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.secondSection {
+    background-color: rgb(88, 88, 88);
+    padding: 3rem;
+    display: flex;
+    color: rgb(223, 223, 223);
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.secondSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.secondSection p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mergeResult {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mergeNumber {
+    padding: 1rem 2rem;
+    background-color: rgb(191, 191, 191);
+    border-radius: 0.5rem;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.unsortedArray {
+    display: flex;
+    width: 80%;
+    padding: 1rem;
+    background-color: rgb(180, 180, 180);
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    transition: all 0.3s;
+    opacity: 0;
+    display: none;
+}
+
+.sortedArray {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgb(247, 199, 78);
+    border-radius: 0.5rem;
+    transition: all 1s;
+    opacity: 0;
+    display: none;
+}
+
+.mergeOpened {
+    opacity: 1;
+    transition: all 0.s;
+    display: flex;
+}
+
+.courseForm {
+    background-color: rgb(214, 214, 214);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.courseForm h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.courseForm input {
+    width: 30%;
+    border: none;
+    background-color: rgb(194, 192, 192);
+    margin: 0.5rem 0rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    transition: all 0.3s;
+}
+
+.courseForm input:focus {
+    outline: none;
+    background-color: rgb(182, 182, 182);
+    transition: all 0.2s;
+}
+
+.courseForm button {
+    border: none;
+    background-color: rgb(238, 193, 56);
+    margin: 0.5rem 0rem;
+    padding: 1rem;
+    width: 10%;
+    border-radius: 0.5rem;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    transition: all 0.2s;
+}
+
+.courseForm button:hover {
+    cursor: pointer;
+    background-color: rgb(254, 216, 99);
+    transition: all 0.3s;
+}
+
+.courseInputs {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
 }
 
 .tryit {

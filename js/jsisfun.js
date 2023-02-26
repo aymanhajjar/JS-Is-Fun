@@ -160,12 +160,13 @@ function getIP() {
 
 function submitForm() {
     if(validateForm()) {
-        var json_object = {
+        var js_object = {
             'firstname': register_form.elements['firstname'].value,
             'lastname': register_form.elements['lastname'].value,
             'email': register_form.elements['email'].value,
             'password': register_form.elements['password'].value,
         }
+        var json_object = JSON.stringify(js_object)
         console.log('JSON Object: ',json_object)
         full_name = register_form.elements['firstname'].value + ' ' + register_form.elements['lastname'].value
         reg_button.innerHTML = 'Sign Out'
